@@ -24,8 +24,8 @@ fun Any?.println() = println(this)
 
 fun Int.toFilename() = "day" + toString().padStart(2, '0')
 
-inline fun <T> Iterable<T>.sumOfIndexed(selector: (index: Int, T) -> Int): Int {
-    var sum = 0
+inline fun <T> Iterable<T>.sumOfIndexed(selector: (index: Int, T) -> Long): Long {
+    var sum = 0L
     forEachIndexed { index, item ->
         sum += selector(index, item)
     }

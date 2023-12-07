@@ -13,14 +13,14 @@ class Day03 : AdventOfCodeTest(3) {
         val sum = lines.sumOfIndexed { i, line ->
             line.numbers.sumOf { range ->
                 val adjacentRange = (range.first - 1)..(range.last + 1)
-                val number = line.raw.substring(range).toInt()
+                val number = line.raw.substring(range).toLong()
                 if (i > 0 && lines[i - 1].symbols.any { it in adjacentRange }
                     || line.symbols.contains(range.first - 1) || line.symbols.contains(range.last + 1)
                     || i < lastRowIndex && lines[i + 1].symbols.any { it in adjacentRange }
                 ) {
                     number
                 } else {
-                    0
+                    0L
                 }
             }
         }
