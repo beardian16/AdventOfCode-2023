@@ -9,8 +9,8 @@ class Day05 : AdventOfCodeTest(5) {
     private val testLines = buildSeedMap(TEST_INPUT)
     private val realLines = buildSeedMap(input)
 
-        private val seedMap = testLines
-//    private val seedMap = realLines
+//        private val seedMap = testLines
+    private val seedMap = realLines
 
     override fun part1() {
         val min = seedMap.seedRanges.flatMap { seedRange ->
@@ -30,8 +30,12 @@ class Day05 : AdventOfCodeTest(5) {
     }
 
     override fun part2() {
+        //MIN: 382895070
         seedMap.println()
         var min = Long.MAX_VALUE
+
+//        seedMap.rangeMaps.fold(seedMap.seedRanges.map { it.first }) { acc, map -> acc }
+//        /*
         seedMap.seedRanges.forEach { seedRange ->
             seedRange.forEach { seed ->
                 var next = seed
@@ -48,6 +52,7 @@ class Day05 : AdventOfCodeTest(5) {
                 }
             }
         }
+        // */
         println("MIN: $min")
     }
 
@@ -70,7 +75,7 @@ class Day05 : AdventOfCodeTest(5) {
                     val initialSeeds = line.split(": ")[1].split(' ').map { it.toLong() }
                     initialSeedRanges.addAll(
                         // Part 1
-//                        initialSeeds.map { it..it },
+//                        initialSeeds.map { it..it }
                         // Part 2
                         initialSeeds.chunked(2) { it[0] until (it[0] + it[1]) }.also {
                             it.forEach { r1 ->
@@ -80,7 +85,7 @@ class Day05 : AdventOfCodeTest(5) {
                                     }
                                 }
                             }
-                        },
+                        }
                     )
                 }
 
