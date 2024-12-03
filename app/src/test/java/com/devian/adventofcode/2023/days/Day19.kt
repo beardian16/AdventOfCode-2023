@@ -1,8 +1,8 @@
-package com.devian.adventofcode.days
+package com.devian.adventofcode.`2023`.days
 
 import com.devian.adventofcode.AdventOfCodeTest
 
-class Day22 : AdventOfCodeTest(22) {
+class Day19 : AdventOfCodeTest(19) {
 
     private val test = buildMap1(TEST_INPUT)
     private val real = buildMap1(input)

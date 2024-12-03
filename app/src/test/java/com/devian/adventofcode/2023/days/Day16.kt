@@ -1,4 +1,4 @@
-package com.devian.adventofcode.days
+package com.devian.adventofcode.`2023`.days
 
 import com.devian.adventofcode.AdventOfCodeTest
 
